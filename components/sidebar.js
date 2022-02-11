@@ -40,6 +40,7 @@ export default function Sidebar() {
               <h4 className="font-bold">firebase 1875</h4>
               <p className="text-[#6e767d]">@firebase1875</p>
             </div>
+            <DotsHorizontalIcon className="h-5 hidden xl:inline ml-10"/>
           </div>
 
     </div>
