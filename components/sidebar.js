@@ -34,8 +34,7 @@ export default function Sidebar() {
         rounded-full w-56 h-[52px] text-lg font-bold shadow-md hover:bg-[#1a8cd8]">
           Tweet
           </button>
-          <div className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:-mr-5
-          mt-auto">
+          <div className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:-mr-5 mt-auto">
             <Image src="/images/fb.png" alt="wahab" width={40} height={40} className=" rounded-full xl:mr-2.5" />
             <div className="hidden xl:inline leading-5">
               <h4 className="font-bold">firebase 1875</h4>
