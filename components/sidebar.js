@@ -31,7 +31,13 @@ export default function Sidebar() {
           <SidebarLink text="More" Icon={DotsCircleHorizontalIcon} />
         </div>
         <button className="hidden xl:inline ml-auto bg-[#1d9bf0] text-white
-        rounded-full w-56 h-[52px] text-lg font-bold shadow-md hover:bg-[#1a8cd8]">Tweet</button>
+        rounded-full w-56 h-[52px] text-lg font-bold shadow-md hover:bg-[#1a8cd8]">
+          Tweet
+          </button>
+          <div>
+            <Image src="/images/fb.png" alt="wahab" />
+          </div>
+
     </div>
   )
 }
