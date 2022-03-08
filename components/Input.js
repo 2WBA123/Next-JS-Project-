@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import {
   CalendarIcon,
@@ -7,10 +7,15 @@ import {
   PhotographIcon,
   XIcon,
 } from "@heroicons/react/outline";
+import { Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
 
 function Input() {
   const [input, setInput] = useState("");
   const [selected, setSelected] = useState(null);
+  const filePickerRef = useRef(null);
+  const [showEmojis,setShowEmojis]=useState(false)
+  const addImageToPost = ()=>{}
   return (
     <div className={`border-b border-gray-700 p-3 flex space-x-3 `}>
       <div>
@@ -42,9 +47,35 @@ function Input() {
         </div>
         <div className="flex items-center justify-between pt-2.5">
               <div className="flex items-center">
-                <div className="icon">
-                   <PhotographIcon className="h-[22px] text-[#1d9bf0]"/> 
+                <div className="icon" onClick={()=>filePickerRef.current.click()}>
+                   <PhotographIcon className="h-[22px] text-[#1d9bf0]"/>
+                   <input type="file" onChange={addImageToPost} hidden ref={filePickerRef}/> 
                 </div>
+
+                <div className="icon rotate-90">
+                <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
+              </div>
+
+              <div className="icon" onClick={() => setShowEmojis(!showEmojis)}>
+                <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
+              </div>
+
+              <div className="icon">
+                <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+              </div>
+               {showEmojis && (
+                  <Picker
+                  onSelect={addEmoji}
+                  style={{
+                    position: "absolute",
+                    marginTop: "465px",
+                    marginLeft: -40,
+                    maxWidth: "320px",
+                    borderRadius: "20px",
+                  }}
+                  theme="dark"
+                />
+               )}
               </div>
         </div>
       </div>
