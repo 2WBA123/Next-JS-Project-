@@ -42,7 +42,8 @@ function Input() {
   };
 
   return (
-    <div className={`border-b border-gray-700 p-3 flex space-x-3 `}>
+    <div className={`border-b border-gray-700 p-3 flex space-x-3
+     overflow-y-scroll ${loading && "opacity-60"} `}>
       <div>
         <Image src="/images/fb.png" alt="wahab" width={40} height={40}
           className="rounded-full cursor-pointer " />
@@ -118,3 +119,4 @@ function Input() {
 }
 
 export default Input
+
